@@ -1,0 +1,61 @@
+Apliaciones apiRest
+ -> puntoss de conexion para comartir información
+ apirest devuelve arhivos en formato _Json
+ NVc devuelve condigo html
+ Microservicios -> proporcionan escalabilidad
+
+ GetMapping -> anotaciones para los controladores nos permite asociar una url a nuestra aplicaciones asi nos podremos
+ comuncar con el exterio de la aplicacion
+ para configurar spring devtools debemos ir a seting y marcar las dos siguientes opciones
+        1 seting advance allow auto make starter
+        1 seting build Exceution- complier marcar build project automaticaly
+
+        """
+         esta sintaxis me ermite epgar todo el codigo html que quieras sin tener que estar concatenando esto
+          esta disponible solo a partir de la version java 15
+        """
+
+  Testeos aplicaciones
+  tenemos integrado una herramientta de test para comporbar nuestro codigo es unit
+
+  en el paquete test que se crear automaitacmente al crear un projecto de espring generamos un test y esto nos crea
+   la carepta y emtodo correspondiente para ejecutar teste
+   los test contas de tres partes
+    1- prepracion y creacion del codigo que va a probar
+    2- ejecutar las pruebas
+    3- se comprueba el resultado con as
+    se puede hacer test sin cargar spring o cargando spring son mas lento los test
+
+    Vamos a usar springfox boot starter como dependencia para documentar nuestra aplicacion esto nos permite
+    en caso de compartir el codigo que la otra persona tenga facil la comprension de nestro codigo
+    Swagger instalacions
+        1- inyectar las dependencia de la pagina de mvnrepositories
+        2- crear un paquete config para crear unaclase alli que sea la de configuracion
+        3- crear un beans que es el que va hacer que spring se coencte con Swagger
+        dar un error al ejecutar cn swagger por elo pones esta linea en properties  en resources de nuestra api
+        spring.mvc.pathmatch.matching-strategy = ANT_PATH_MATCHER
+        http://localhost:8081/swagger-ui/ -> esta web se crear automaticamente al crear el Swagger contenido html con la documentacion
+        las importaciones para trabajr con Wagger deben venir de import springfox.documentation
+    distintos metodos par adocumentar usando swagger
+        ->@ApiIgnore ignorar un metodo a documentar
+        ->@ApiOperation("buscar un libro por clave primaria id long")
+        ->@ApiParam("clave primaria tipo Long")
+        -< http://localhost:8081/v2/api-docs json
+
+      CICLOS DE VIDA DE UN PROECTO
+
+        -> 1 defeault-< trae mas cmandos para ejecutar que las otra dos
+        ->2 clean ->borra la careta tarjet para que a su proxima ejecucion la aplicacion se vuelva a crear por completo
+        -> 3 site -> comando para crer la documentacion de la web
+
+        dentro de lyfeCycle tenemos varios comando es descendente osea si se ejecuta un  pestaña
+        se ejecutan las anteriores  pakage compila nuestro codigo crea los ejecutables de nuestra aplicacion
+
+        comando para arrancar aplicacion dsde consola java -jar nombre del jar de nuestra aplicacion
+        linea de codigo que define que estado esta activo en propeerties
+        -> spring.profiles.active=dev en este caso seria el entorno dev esta linea se pone
+         para declarar variaables ene ste archivo lo hacemos con app.nombre de la variable
+         si creamos una variable en un entorno por norma la creamos en los demas con valor que corresponda
+
+         DESPLIEGUE DE API REST
+
