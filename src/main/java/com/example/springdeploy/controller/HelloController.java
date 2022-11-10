@@ -13,7 +13,7 @@ public class HelloController {
         podemos crear distintos properties para distintes pefiles dessarrollo produccion prueba etc
 
     * */
-    @Value("${app.varExample}")
+    @Value("${app.prueba}")
     String message;
     @GetMapping("/hola")
     public String holaMundo(){
