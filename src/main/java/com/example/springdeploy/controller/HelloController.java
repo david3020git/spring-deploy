@@ -21,7 +21,7 @@ public class HelloController {
         return  "hola mundo que hace papi flow cogemos cambios ono";
     }
 
-    @GetMapping("/bootstrap")
+    @GetMapping("/")
     public  String boostrap(){
 
         return """
